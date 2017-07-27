@@ -323,7 +323,8 @@ def get_room_parameters(request, room_id, client_id, is_initiator):
     room_link = request.host_url + '/r/' + room_id
     room_link = append_url_arguments(request, room_link)
     params['room_id'] = room_id
-    params['room_link'] = room_link
+    params['room_link'] = room_link.replace('http','https')
+    logging.warning('memcache.Client.set failed for key ' + room_link)
   if client_id is not None:
     params['client_id'] = client_id
   if is_initiator is not None:

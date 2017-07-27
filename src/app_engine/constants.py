@@ -39,6 +39,36 @@ TURN_SERVER_OVERRIDE = []
 #   }
 # ]
 
+
+TURN_SERVER_OVERRIDE = [
+  {
+    "urls": [
+     'turn:numb.viagenie.ca'
+    ],
+    'credential': 'muazkh',
+    'username': 'webrtc@live.com'
+  },
+  {
+    "urls": [
+     'turn:turn.anyfirewall.com:443?transport=tcp'
+    ],
+    'credential': 'webrtc',
+    'username': 'webrtc'
+  }, 
+  {
+    "urls": [
+     'turn:turn.bistri.com:80'
+    ],
+    'credential': 'homeo',
+    'username': 'homeo'
+  }, 
+
+  {
+    "urls": [
+      'stun:stun.l.google.com:19302'
+    ]
+  }
+]
 # TODO(jansson): Remove once AppRTCDemo on iOS supports ICE_SERVER.
 TURN_BASE_URL = 'https://computeengineondemand.appspot.com'
 TURN_URL_TEMPLATE = '%s/turn?username=%s&key=%s'
@@ -54,7 +84,7 @@ CALLSTATS_PARAMS = {
 }
 
 # Dictionary keys in the collider instance info constant.
-WSS_INSTANCE_HOST_KEY = 'host_port_pair'
+WSS_INSTANCE_HOST_KEY = 'localhost:8089'
 WSS_INSTANCE_NAME_KEY = 'vm_name'
 WSS_INSTANCE_ZONE_KEY = 'zone'
 WSS_INSTANCES = [{
