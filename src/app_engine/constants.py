@@ -38,16 +38,7 @@ TURN_SERVER_OVERRIDE = []
 #     ]
 #   }
 # ]
-
-
 TURN_SERVER_OVERRIDE = [
-  {
-    "urls": [
-     'turn:numb.viagenie.ca'
-    ],
-    'credential': 'muazkh',
-    'username': 'webrtc@live.com'
-  },
   {
     "urls": [
      'turn:turn.anyfirewall.com:443?transport=tcp'
@@ -55,17 +46,12 @@ TURN_SERVER_OVERRIDE = [
     'credential': 'webrtc',
     'username': 'webrtc'
   }, 
-  {
-    "urls": [
-     'turn:turn.bistri.com:80'
-    ],
-    'credential': 'homeo',
-    'username': 'homeo'
-  }, 
 
   {
     "urls": [
-      'stun:stun.l.google.com:19302'
+      'stun:stun.l.google.com:19302',
+      'stun:stun1.l.google.com:19302',
+      'stun:stun2.l.google.com:19302'
     ]
   }
 ]
@@ -84,18 +70,16 @@ CALLSTATS_PARAMS = {
 }
 
 # Dictionary keys in the collider instance info constant.
-WSS_INSTANCE_HOST_KEY = 'localhost:8089'
+WSS_INSTANCE_HOST_KEY = 'host_port_pair'
 WSS_INSTANCE_NAME_KEY = 'vm_name'
 WSS_INSTANCE_ZONE_KEY = 'zone'
-WSS_INSTANCES = [{
-    WSS_INSTANCE_HOST_KEY: 'apprtc-ws.webrtc.org:443',
-    WSS_INSTANCE_NAME_KEY: 'wsserver-std',
-    WSS_INSTANCE_ZONE_KEY: 'us-central1-a'
-}, {
-    WSS_INSTANCE_HOST_KEY: 'apprtc-ws-2.webrtc.org:443',
+WSS_INSTANCES = [ {
+#    WSS_INSTANCE_HOST_KEY: 'wss.jp-brothers.com:443',
+    WSS_INSTANCE_HOST_KEY: 'jptf2.jp-brothers.com:8089',
     WSS_INSTANCE_NAME_KEY: 'wsserver-std-2',
     WSS_INSTANCE_ZONE_KEY: 'us-central1-f'
 }]
+
 
 WSS_HOST_PORT_PAIRS = [ins[WSS_INSTANCE_HOST_KEY] for ins in WSS_INSTANCES]
 
